@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="shortcut icon" href="">
+  </head>
+  <body>
+    
+    <a href="http://localhost:5010">Back</a>
+    <div id="allImgs"></div>
+
+    <script>
+
+      var someJavaScriptVar = '{{ value }}';
+
+      var allImgs = someJavaScriptVar.split(",");
+      var div = document.getElementById("allImgs");
+      // div.innerHTML = "";
+      
+      for(var i in allImgs){
+        var imgsrc=allImgs[i];
+        if (imgsrc.length>0){
+          console.log(imgsrc);
+          var imagem=document.createElement("img");
+          imagem.src=imgsrc;
+          imagem.style.height = '100px';
+          imagem.style.width = '100px';
+          div.appendChild(imagem);
+        }
+      }
+
+    </script>
+
+
+  </body>
+</html>
